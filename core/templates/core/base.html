@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container border border-dark border-4 rounded">
+        <div class="alert alert-success bg-danger mt-3 text-light" role="alert">
+            <p class="alert-heading fs-2 text-center">Today's News</h>
+
+            <div>
+                {% block date %}
+                {% endblock date %}
+            </div>
+
+            <p class="fs-4 fst-italic">Yourstory.com</p>
+            <hr>
+            <p class="mb-0 fs-4 fw-bold">In a nutshell</p>
+        </div>
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+
+
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+
+
+</body>
+
+</html>

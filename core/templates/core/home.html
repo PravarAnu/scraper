@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block date %} 
+
+<p class="text-center">
+{{date}}   
+</p>
+ 
+{% endblock date %}
+
+
+
+{% block content %}
+
+
+{% for link in links %}
+
+<div class="alert alert-secondary fs-4 fw-bold" role="alert">
+    {{link}}
+</div>
+
+ <!-- <p class="fs-4 fw-bold"></p> -->
+
+{% endfor %}
+
+{% endblock content %}
+
