@@ -12,23 +12,9 @@
 </head>
 
 <body>
-    <div class="container border border-dark border-4 rounded">
-        <div class="alert alert-success bg-danger mt-3 text-light" role="alert">
-            <p class="alert-heading fs-2 text-center">Today's News</h>
+    {% block content %}
 
-            <div>
-                {% block date %}
-                {% endblock date %}
-            </div>
-            <p class="fs-4 fst-italic">Yourstory.com</p>
-            <hr>
-            <p class="mb-0 fs-4 fw-bold">In a nutshell</p>
-        </div>
-        {% block content %}
-
-        {% endblock content %}
-    </div>
-
+    {% endblock content %}
 
 
     <script src="{% static 'core/js/jquery.js' %}"></script>
