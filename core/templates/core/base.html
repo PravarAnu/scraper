@@ -12,6 +12,25 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd" ;>
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item fs-3 fw-bold">
+                        <a class="nav-link active" aria-current="page" href="{% url 'core:index' %}">Scrapper</a>
+                    </li>
+                </ul>
+                <div class="d-flex fs-5 fw-bold">
+                    <a class="nav-link" href="{% url 'core:index' %}">Home</a>
+                    <a class="nav-link" href="{% url 'core:hackernews' %}">Hacker News</a>
+                    <a class="nav-link" href="{% url 'core:yourstory' %}">Your Story</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     {% block content %}
 
     {% endblock content %}
