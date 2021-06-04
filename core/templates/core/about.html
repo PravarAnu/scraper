@@ -10,10 +10,10 @@
     This web application provides you with the latest news headlines of hackernews.com and yourstory.com with
     preciseness.
     Every headline present here is efficient and up-to-date as per the parent websites.
-    The technology used in this web application is Django (pthon web framework) with beautiful Soup (python pakage) used
+    The technology used in this web application is Django (python web framework) with beautiful Soup (python pakage) used
     for scraping.
     Purpose -
-    This application porposely made to save the pricious time of an individual as it serves the header of the news and
+    This application purposely made to save the precious time of an individual as it serves the header of the news and
     keep you up-to-date in a very short time.
 </p>
 <p class="fs-4">HackerNews</p>
@@ -42,6 +42,13 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+</div>
+<div>
+    <ul>
+        {% for latest in latest_feedback %}
+            <li>{{ latest }}</li>
+        {% endfor %}
+    </ul>
 </div>
 
 {% endblock content %}
