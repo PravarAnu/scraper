@@ -3,6 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import datetime
+from .forms import Feedback
+from .models import UserFeedback
+from django.http import HttpResponse
 
 def yourstory(request):
     l = []
@@ -28,4 +31,18 @@ def hackernews(request):
 
 def index(request):
     return render(request, 'core/landing.html')
+
+def about(request):
+    if request.method=="POST":
+        feedback_obj=Feedback(request.POST)
+        if feedback_obj.is_valid():
+            email_val=feedback_obj.cleaned_data['email']
+            feedback_val=feedback_obj.cleaned_data['feedback']
+            UserFeedback_obj=UserFeedback(email=email_val,feedback=feedback_val)
+            UserFeedback_obj.save()
+            feedback_obj=Feedback()
+            
+    else:
+        feedback_obj=Feedback()
+    return render(request,'core/about.html',{'form':feedback_obj})
 

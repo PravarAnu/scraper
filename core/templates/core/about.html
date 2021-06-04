@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+<p class="fs-1">About us</p>
+
+<p>
+    This web application provides you with the latest news headlines of hackernews.com and yourstory.com with
+    preciseness.
+    Every headline present here is efficient and up-to-date as per the parent websites.
+    The technology used in this web application is Django (pthon web framework) with beautiful Soup (python pakage) used
+    for scraping.
+    Purpose -
+    This application porposely made to save the pricious time of an individual as it serves the header of the news and
+    keep you up-to-date in a very short time.
+</p>
+<p class="fs-4">HackerNews</p>
+<p>
+    Hacker News (sometimes abbreviated as HN) is a social news website focusing on computer science and
+    entrepreneurship. It is run by Paul Graham's investment fund and startup incubator, Y Combinator. In general, content that can be
+    submitted is defined as "anything that gratifies one's intellectual curiosity.
+</p>
+<p class="fs-4">YourStory</p>
+<p>
+    The YourStory Team brings you stories of entrepreneurs and change-makers, funding analyses, resource pieces and the first glimpse of emerging trends from India's entrepreneurial ecosystem, as well as profiles of great businesses and entrepreneurs from all over the world.
+</p>
+</div>
+
+<div class="container">
+
+    <div class="">
+        <p class="fs-2">
+            Give your valuable feedback here
+        </p>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
