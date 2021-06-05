@@ -30,25 +30,39 @@
 
 <div class="container">
 
-    <div class="">
+    <div class="border border-secondary border-2 p-4">
         <p class="fs-2">
             Give your valuable feedback here
         </p>
 
         <form action="" method="POST">
             {% csrf_token %}
-            {{form.as_p}}
+
+            {% for field in form %}
+            <div>
+                <p>{{field.label_tag}}</p>
+                <p>{{field}}</p>
+
+            </div>
+            {% endfor %}
 
             <input type="submit" value="Submit">
         </form>
     </div>
-</div>
-<div>
-    <ul>
-        {% for latest in latest_feedback %}
-            <li>{{ latest }}</li>
-        {% endfor %}
-    </ul>
+
+    <div>
+        <div class="fs-5 my-3">Reviews</div>
+            {% for latest in latest_feedback %}
+                <div class="my-3" type="none">
+                    <div class="card">
+                        <div class="card-body">
+                          <p class="card-text">{{latest}}</p>
+                        </div>
+                      </div>
+                    </div>
+            {% endfor %}
+      
+    </div>
 </div>
 
 {% endblock content %}

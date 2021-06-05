@@ -40,9 +40,10 @@ def about(request):
     if request.method=="POST":
         feedback_obj=Feedback(request.POST)
         if feedback_obj.is_valid():
+            name_val=feedback_obj.cleaned_data['name']
             email_val=feedback_obj.cleaned_data['email']
             feedback_val=feedback_obj.cleaned_data['feedback']
-            UserFeedback_obj=UserFeedback(email=email_val,feedback=feedback_val,date=timezone.now())
+            UserFeedback_obj=UserFeedback(email=email_val,feedback=feedback_val,name=name_val,date=timezone.now())
             UserFeedback_obj.save()
             feedback_obj=Feedback()
             
