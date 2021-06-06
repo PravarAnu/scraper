@@ -44,11 +44,11 @@
         </form>
     </div>
 
-    <div>
-        <div class="fs-5 my-3">Reviews</div>
+    <div class="">
+        <div class="fs-4 fw-bold my-3 text-center">Reviews</div>
             {% for latest in latest_feedback %}
-                <div class="my-3" type="none">
-                    <div class="card alert alert-success fw-bold">
+                <div class="my-3 d-flex justify-content-center" type="none">
+                    <div class="card alert alert-success fw-bold w-75">
                         <div class="card-body">
                           <p class="card-text">{{latest}}</p>
                         </div>
