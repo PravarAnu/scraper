@@ -18,7 +18,7 @@
 </p>
 <p class="fs-4">HackerNews</p>
 <p>
-    Hacker News (sometimes abbreviated as HN) is a social news website focusing on computer science and
+    Hacker News is a social news website focusing on computer science and
     entrepreneurship. It is run by Paul Graham's investment fund and startup incubator, Y Combinator. In general, content that can be
     submitted is defined as "anything that gratifies one's intellectual curiosity.
 </p>
@@ -32,21 +32,15 @@
 
     <div class="border border-secondary border-2 p-4">
         <p class="fs-2">
-            Give your valuable feedback here
+            Give your valueable feedback here
         </p>
 
         <form action="" method="POST">
             {% csrf_token %}
 
-            {% for field in form %}
-            <div>
-                <p>{{field.label_tag}}</p>
-                <p>{{field}}</p>
+            {{form.as_p}}
 
-            </div>
-            {% endfor %}
-
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
 
@@ -54,7 +48,7 @@
         <div class="fs-5 my-3">Reviews</div>
             {% for latest in latest_feedback %}
                 <div class="my-3" type="none">
-                    <div class="card">
+                    <div class="card alert alert-success fw-bold">
                         <div class="card-body">
                           <p class="card-text">{{latest}}</p>
                         </div>
