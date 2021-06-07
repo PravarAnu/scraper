@@ -10,5 +10,5 @@ class UserFeedback(models.Model):
     date = models.DateTimeField("Date")
 
     def __str__(self):
-        return f'{self.name} :: {self.feedback}'
-       
+        return f'{self.name}:: {self.feedback}'
+
